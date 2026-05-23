@@ -22,5 +22,7 @@ class Grafo{
     //mexe com os vertices
     void inserirVertice(int v);
     void removerVertice(int v);
+    //funcao aux do remover vertice
+    int getIndiceVertice(int v);
 };
 #endif
