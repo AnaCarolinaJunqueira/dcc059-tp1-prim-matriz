@@ -12,13 +12,15 @@ class Grafo{
         vector<int> vertices;
         vector<vector<double>> matriz;
 
-        bool existeVertice(int v);
-
         bool orientado;
         bool ponderado;
 
     public:
     //construtor
     Grafo(bool ehOrientado, bool ehPonderado);
+
+    //mexe com os vertices
+    void inserirVertice(int v);
+    void removerVertice(int v);
 };
 #endif
