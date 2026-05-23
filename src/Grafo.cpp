@@ -59,5 +59,42 @@ void Grafo::removerVertice(int v){
 
 //mexe com as arestas
 void Grafo::inserirAresta(int u, int v, int peso){
+    int indiceU = getIndiceVertice(u);
+    int indiceV = getIndiceVertice(v);
 
+    //trata vertices invalidos
+    if(indiceU == -1 || indiceV == -1){
+        return;
+    }
+
+    //se o grafo nao for ponderado
+    if(!ponderado){
+        peso = 1;
+    }
+
+    //adiciona aresta
+    matriz[indiceU][indiceV] = peso;
+
+    //se não for orientado
+    if(!orientado){
+        matriz[indiceV][indiceU] = peso;
+    }
+}
+
+void Grafo::removerAresta(int u, int v){
+    int indiceU = getIndiceVertice(u);
+    int indiceV = getIndiceVertice(v);
+
+    //trata vertices invalidos
+    if(indiceU == -1 || indiceV == -1){
+        return;
+    }
+
+    //remove aresta
+    matriz[indiceU][indiceV] = 0;
+
+    //se o grafo nao for orientado
+    if(!orientado){
+        matriz[indiceV][indiceU] = 0;
+    }
 }

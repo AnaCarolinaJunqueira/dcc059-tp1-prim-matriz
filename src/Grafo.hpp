@@ -27,5 +27,6 @@ class Grafo{
 
     //mexe com as arestas
     void inserirAresta(int u, int v, int peso = 1);
+    void removerAresta(int u, int v);
 };
 #endif
