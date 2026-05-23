@@ -55,5 +55,9 @@ void Grafo::removerVertice(int v){
     for(int i = 0; i < matriz.size(); i++){
         matriz[i].erase(matriz[i].begin() + indice);
     }
+}
+
+//mexe com as arestas
+void Grafo::inserirAresta(int u, int v, int peso){
 
 }

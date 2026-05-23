@@ -24,5 +24,8 @@ class Grafo{
     void removerVertice(int v);
     //funcao aux do remover vertice
     int getIndiceVertice(int v);
+
+    //mexe com as arestas
+    void inserirAresta(int u, int v, int peso = 1);
 };
 #endif
