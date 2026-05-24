@@ -29,11 +29,15 @@ class Grafo{
     void inserirAresta(int u, int v, int peso = 1);
     void removerAresta(int u, int v);
     bool verificarAresta(int u, int v);    
+    void alterarPesoAresta(int u, int v, double peso);
 
 
     // Calcula o grau de um vértice
     int grauVertice(int idVertice);
     // Retorna a lista de vizinhos
     vector<int> listarVizinhos(int idVertice);
+
+    // Exibe o grafo no formato do CS Academy    
+    void exibirGrafo();
 };
 #endif
