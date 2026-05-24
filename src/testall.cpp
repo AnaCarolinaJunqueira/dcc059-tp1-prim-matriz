@@ -21,6 +21,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "Grafo.hpp"
 
 // ============================================================================
 // EXEMPLO DE OPÇÃO 2: COMO USAR UM WRAPPER
@@ -77,8 +78,8 @@ void testAll() {
     // Exemplo: Se usou o Wrapper acima, mude para:
     // GrafoWrapper gNaoOrientado(false);
     // GrafoWrapper gOrientado(true);
-    MeuGrafo gNaoOrientado(false); // Instancia de Grafo NAO Orientado
-    MeuGrafo gOrientado(true);     // Instancia de Grafo ORIENTADO
+    Grafo gNaoOrientado(false, true);
+    Grafo gOrientado(true, true);
 
     int passou = 0;
     int falhou = 0;

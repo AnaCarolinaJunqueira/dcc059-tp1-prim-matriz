@@ -169,3 +169,81 @@ void Grafo::exibirGrafo() {
         }
     }
 }
+
+int Grafo::prim(int verticeInicial, int agmU[], int agmV[], double agmPeso[]){
+    int n = matriz.size();
+
+    if(n == 0 || n>MAX){
+        return 0;
+    }
+
+    int s=0;
+    if(verticeInicial != -1){
+        int ind = getIndiceVertice(verticeInicial);
+        if(ind != -1){
+            s = ind;
+        }
+    }
+
+    double chave[MAX];
+    int pai[MAX];
+    int naArvore[MAX];
+
+    for(int i = 0; i < n; i++){
+        chave[i] = 1e18;
+        pai[i] = -1;
+        naArvore[i] = 0;
+    }
+
+    chave[s] = 0;
+
+    for(int count = 0; count < n; count++){
+        int u = -1;
+
+        for(int i = 0; i < n; i++){
+            if(naArvore[i] == 0 && (u == -1 || chave[i] < chave[u])){
+                u = i;
+            }
+        }
+
+        if(u == -1){
+            break;
+        }
+
+        naArvore[u] = 1;
+
+        for(int v = 0; v < n; v++){
+            if(naArvore[v] == 0 && matriz[u][v] != 0 && matriz[u][v] < chave[v]){
+                chave[v] = matriz[u][v];
+                pai[v] = u;
+            }
+        }
+    }
+
+    int tam = 0;
+    for(int i = 0; i < n; i++){
+        if(pai[i] != -1){
+            agmU[tam] = vertices[pai[i]];
+            agmV[tam] = vertices[i];
+            agmPeso[tam] = matriz[pai[i]][i];
+            tam++;
+        }
+    }
+
+    return tam;
+}
+
+void Grafo::exibirPrim(int verticeInicial){
+    int agmU[MAX];
+    int agmV[MAX];
+    double agmPeso[MAX];
+    int tam = prim(verticeInicial, agmU, agmV, agmPeso);
+    double total = 0;
+
+    for(int i = 0; i < tam; i++){
+        cout << agmU[i] << " " << agmV[i] << " " << agmPeso[i] << endl;
+        total += agmPeso[i];
+    }
+
+    cout << total << endl;
+}
