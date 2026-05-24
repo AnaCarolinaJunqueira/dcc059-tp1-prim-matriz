@@ -106,22 +106,36 @@ bool Grafo::saoAdjacentes(int u, int v){
 int Grafo::grauVertice(int v){
     int indice = getIndiceVertice(v);
 
-    //trata vertice inexistente
+    // trata vértice inexistente
     if(indice == -1){
         return 0;
     }
 
-    int grau = 0;
+    int grauSaida = 0;
+    int grauEntrada = 0;
 
-    //conta arestas na linha do vertice
+    // Conta as arestas que saem do vértice 
     for(int j = 0; j < matriz.size(); j++){
         if(matriz[indice][j] != 0){
-            grau++;
+            grauSaida++;
         }
     }
 
-    return grau;
+    // Se for orientado, conta as arestas que entram no vértice 
+    if (orientado) {
+        for(int i = 0; i < matriz.size(); i++){
+            if(i != indice && matriz[i][indice] != 0){
+                grauEntrada++;
+            }
+        }
+        // Em grafos orientados, o grau total é a soma de quem entra e quem sai
+        return grauSaida + grauEntrada; 
+    }
+
+    // Se não for orientado, o grau é apenas o grau de saída (que é igual ao de entrada)
+    return grauSaida;
 }
+
 
 vector<int> Grafo::listarVizinhos(int v){
     vector<int> vizinhos;
