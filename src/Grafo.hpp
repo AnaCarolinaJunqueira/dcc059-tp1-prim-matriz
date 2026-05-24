@@ -25,8 +25,8 @@ class Grafo{
     //funcao aux do remover vertice
     int getIndiceVertice(int v);
 
-    //mexe com as arestas
-    void inserirAresta(int u, int v, int peso = 1);
+    //mexe com as as arestas
+    void inserirAresta(int u, int v, double peso = 1.0);
     void removerAresta(int u, int v);
     bool verificarAresta(int u, int v);
     void alterarPesoAresta(int u, int v, double peso);
@@ -37,7 +37,7 @@ class Grafo{
     // Retorna a lista de vizinhos
     vector<int> listarVizinhos(int idVertice);
 
-    // Exibe o grafo no formato do CS Academy    
+    // Exibe o grafo no formato do CS Academy
     void exibirGrafo();
 };
 #endif
