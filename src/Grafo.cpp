@@ -98,3 +98,43 @@ void Grafo::removerAresta(int u, int v){
         matriz[indiceV][indiceU] = 0;
     }
 }
+
+int Grafo::grauVertice(int v){
+    int indice = getIndiceVertice(v);
+
+    //trata vertice inexistente
+    if(indice == -1){
+        return 0;
+    }
+
+    int grau = 0;
+
+    //conta arestas na linha do vertice
+    for(int j = 0; j < matriz.size(); j++){
+        if(matriz[indice][j] != 0){
+            grau++;
+        }
+    }
+
+    return grau;
+}
+
+vector<int> Grafo::listarVizinhos(int v){
+    vector<int> vizinhos;
+    int indice = getIndiceVertice(v);
+
+    //trata vertice inexistente
+    if(indice == -1){
+        return vizinhos;
+    }
+
+    //busca vizinhos na linha da matriz
+    for(int j = 0; j < matriz.size(); j++){
+        if(matriz[indice][j] != 0){
+            //adiciona o ID real do vertice vizinho
+            vizinhos.push_back(vertices[j]);
+        }
+    }
+
+    return vizinhos;
+}
