@@ -138,3 +138,14 @@ vector<int> Grafo::listarVizinhos(int v){
 
     return vizinhos;
 }
+
+bool Grafo::verificarAresta(int u, int v) {
+    int indiceU = getIndiceVertice(u);
+    int indiceV = getIndiceVertice(v);
+
+    if (indiceU == -1 || indiceV == -1) {
+        return false;
+    }
+
+    return matriz[indiceU][indiceV] != 0;
+}
