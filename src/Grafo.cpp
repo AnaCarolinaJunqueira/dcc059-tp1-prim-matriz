@@ -153,3 +153,19 @@ bool Grafo::verificarAresta(int u, int v) {
 
     return matriz[indiceU][indiceV] != 0;
 }
+
+void Grafo::alterarPesoAresta(int u, int v, double peso) {
+    inserirAresta(u, v, peso);
+}
+
+void Grafo::exibirGrafo() {
+    cout << vertices.size() << endl;
+    for (int i = 0; i < matriz.size(); i++) {
+        int start = orientado ? 0 : i;
+        for (int j = start; j < matriz[i].size(); j++) {
+            if (matriz[i][j] != 0) {
+                cout << vertices[i] << " " << vertices[j] << " " << matriz[i][j] << endl;
+            }
+        }
+    }
+}

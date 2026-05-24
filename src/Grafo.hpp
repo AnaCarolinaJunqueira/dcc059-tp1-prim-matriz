@@ -32,6 +32,7 @@ class Grafo{
     bool saoAdjacentes(int u, int v);
 =======
     bool verificarAresta(int u, int v);    
+    void alterarPesoAresta(int u, int v, double peso);
 
 >>>>>>> 55d64ab479449b826a156b37a15f1334c4eaed8a
 
@@ -39,5 +40,8 @@ class Grafo{
     int grauVertice(int idVertice);
     // Retorna a lista de vizinhos
     vector<int> listarVizinhos(int idVertice);
+
+    // Exibe o grafo no formato do CS Academy    
+    void exibirGrafo();
 };
 #endif
