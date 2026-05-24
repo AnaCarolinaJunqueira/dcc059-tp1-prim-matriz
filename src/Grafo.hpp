@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define MAX 100
+
 class Grafo{
     private:
         
@@ -39,5 +41,8 @@ class Grafo{
 
     // Exibe o grafo no formato do CS Academy    
     void exibirGrafo();
+
+    int prim(int verticeInicial, int agmU[], int agmV[], double agmPeso[]);
+    void exibirPrim(int verticeInicial = -1);
 };
 #endif
