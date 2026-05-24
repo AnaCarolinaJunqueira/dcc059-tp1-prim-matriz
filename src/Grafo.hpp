@@ -25,23 +25,19 @@ class Grafo{
     //funcao aux do remover vertice
     int getIndiceVertice(int v);
 
-    //mexe com as arestas
-    void inserirAresta(int u, int v, int peso = 1);
+    //mexe com as as arestas
+    void inserirAresta(int u, int v, double peso = 1.0);
     void removerAresta(int u, int v);
-<<<<<<< HEAD
-    bool saoAdjacentes(int u, int v);
-=======
-    bool verificarAresta(int u, int v);    
+    bool verificarAresta(int u, int v);
     void alterarPesoAresta(int u, int v, double peso);
-
->>>>>>> 55d64ab479449b826a156b37a15f1334c4eaed8a
+    bool saoAdjacentes(int u, int v);
 
     // Calcula o grau de um vértice
     int grauVertice(int idVertice);
     // Retorna a lista de vizinhos
     vector<int> listarVizinhos(int idVertice);
 
-    // Exibe o grafo no formato do CS Academy    
+    // Exibe o grafo no formato do CS Academy
     void exibirGrafo();
 };
 #endif
