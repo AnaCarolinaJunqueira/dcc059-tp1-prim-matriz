@@ -58,7 +58,7 @@ void Grafo::removerVertice(int v){
 }
 
 //mexe com as arestas
-void Grafo::inserirAresta(int u, int v, int peso){
+void Grafo::inserirAresta(int u, int v, double peso){
     int indiceU = getIndiceVertice(u);
     int indiceV = getIndiceVertice(v);
 
@@ -69,7 +69,7 @@ void Grafo::inserirAresta(int u, int v, int peso){
 
     //se o grafo nao for ponderado
     if(!ponderado){
-        peso = 1;
+        peso = 1.0;
     }
 
     //adiciona aresta
