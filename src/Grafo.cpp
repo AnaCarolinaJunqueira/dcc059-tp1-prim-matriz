@@ -99,6 +99,10 @@ void Grafo::removerAresta(int u, int v){
     }
 }
 
+bool Grafo::saoAdjacentes(int u, int v){
+    return verificarAresta(u, v);
+}
+
 int Grafo::grauVertice(int v){
     int indice = getIndiceVertice(v);
 

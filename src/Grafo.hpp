@@ -28,6 +28,7 @@ class Grafo{
     //mexe com as arestas
     void inserirAresta(int u, int v, int peso = 1);
     void removerAresta(int u, int v);
+    bool saoAdjacentes(int u, int v);
 
     // Calcula o grau de um vértice
     int grauVertice(int idVertice);
